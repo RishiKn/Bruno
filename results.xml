@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="Collections\Contract Value Count" errors="0" failures="0" skipped="0" tests="0" timestamp="2025-01-12T15:13:14.731" hostname="Rishi" time="2.108"/>
+  <testsuite name="Collections\Actual Spend" errors="0" failures="1" skipped="0" tests="3" timestamp="2025-01-12T15:13:14.733" hostname="Rishi" time="1.531">
+    <testcase name="var.Integrationdone isString" status="fail" classname="https://test-api.spendflo.com/dashboard-V2/actual-spend" time="0.510">
+      <failure type="failure" message="Unexpected token 'var'"/>
+    </testcase>
+    <testcase name="Total Saas spend to be exist" status="pass" classname="https://test-api.spendflo.com/dashboard-V2/actual-spend" time="0.510"/>
+    <testcase name="Total Saas spend to be a Number" status="pass" classname="https://test-api.spendflo.com/dashboard-V2/actual-spend" time="0.510"/>
+  </testsuite>
+  <testsuite name="Collections\Dates" errors="0" failures="0" skipped="0" tests="0" timestamp="2025-01-12T15:13:14.733" hostname="Rishi" time="0.229"/>
+</testsuites>

@@ -1,0 +1,20 @@
+meta {
+  name: Dates
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/dashboard-V2/savings?startDate=null&endDate=null
+  body: none
+  auth: none
+}
+
+params:query {
+  startDate: null
+  endDate: null
+}
+
+assert {
+  res.status: eq 200
+}
