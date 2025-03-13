@@ -1,0 +1,25 @@
+meta {
+  name: Basic connect
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://api.truto.one/unified/accounting/accounts
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~: 
+}
+
+auth:bearer {
+  token: 853286b8-85d6-4397-955e-3d6793d75621
+}
+
+body:json {
+  {
+      "sync_job_id": "da8739e0-8a3e-4e7c-9a9f-f27dae5e8144"
+  }
+}

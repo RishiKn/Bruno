@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <testsuites>
-  <testsuite name="Collections\Contract Value Count" errors="1" failures="0" skipped="0" tests="1" timestamp="2025-01-12T18:08:36.283" hostname="Rishi" time="0.036">
-    <testcase name="Test suite has no errors" status="fail" classname="http://{{baseUrl}}/dashboard-V2/top-contracts?filterBy=BY_CONTRACT_VALUE" time="0.036">
+  <testsuite name="Collections\Contract Value Count" errors="1" failures="0" skipped="0" tests="1" timestamp="2025-01-13T10:27:30.035" hostname="Rishi" time="0.044">
+    <testcase name="Test suite has no errors" status="fail" classname="http://{{baseUrl}}/dashboard-V2/top-contracts?filterBy=BY_CONTRACT_VALUE" time="0.044">
       <error type="error" message="getaddrinfo ENOTFOUND {{baseurl}}"/>
     </testcase>
   </testsuite>
-  <testsuite name="Collections\Actual Spend" errors="1" failures="0" skipped="0" tests="1" timestamp="2025-01-12T18:08:36.286" hostname="Rishi" time="0.016">
-    <testcase name="Test suite has no errors" status="fail" classname="http://{{baseUrl}}/dashboard-V2/actual-spend" time="0.016">
+  <testsuite name="Collections\Actual Spend" errors="1" failures="0" skipped="0" tests="1" timestamp="2025-01-13T10:27:30.048" hostname="Rishi" time="0.015">
+    <testcase name="Test suite has no errors" status="fail" classname="http://{{baseUrl}}/dashboard-V2/actual-spend" time="0.015">
       <error type="error" message="getaddrinfo ENOTFOUND {{baseurl}}"/>
     </testcase>
   </testsuite>
-  <testsuite name="Collections\Dates" errors="1" failures="0" skipped="0" tests="1" timestamp="2025-01-12T18:08:36.286" hostname="Rishi" time="0.003">
-    <testcase name="Test suite has no errors" status="fail" classname="http://{{baseUrl}}/dashboard-V2/savings?startDate=null&amp;endDate=null" time="0.003">
+  <testsuite name="Collections\Dates" errors="1" failures="0" skipped="0" tests="1" timestamp="2025-01-13T10:27:30.048" hostname="Rishi" time="0.004">
+    <testcase name="Test suite has no errors" status="fail" classname="http://{{baseUrl}}/dashboard-V2/savings?startDate=null&amp;endDate=null" time="0.004">
       <error type="error" message="getaddrinfo ENOTFOUND {{baseurl}}"/>
     </testcase>
   </testsuite>

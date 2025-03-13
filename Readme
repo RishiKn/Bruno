@@ -1,0 +1,9 @@
+Running a specified collection
+    bnew run <collection-name> { bnew run "Spendflo APIs"    }
+
+Running a specified collection with the specified environment
+    bnew run "Spendflo APIs" --env dev
+
+Run a Specific Request in the Collection
+    bnew run "Spendflo APIs" --request "Overview API"
+

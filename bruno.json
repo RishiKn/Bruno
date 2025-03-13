@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "name": "Dashboards",
+  "name": "Spendflo_Api's",
   "type": "collection",
   "ignore": [
     "node_modules",
