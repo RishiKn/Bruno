@@ -1,0 +1,39 @@
+meta {
+  name: Actual Spend
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/dashboard-V2/actual-spend
+  body: json
+  auth: none
+}
+
+headers {
+  cookie: {{cookieHeaderSuperAdmin}}
+  session-organization-id
+  : 671f26bd62ce7745252b0fed
+}
+
+assert {
+  res.body.isIntegratedWithFinanceTools: eq true
+  res.status: eq 200
+  res.body.totalSaasSpend: isNumber
+}
+
+tests {
+  test("Total Saas spend to be exist",function()
+       {
+          const data = res.getBody();
+          expect(data.totalSaasSpend).to.exist;
+  });
+  
+  test("Total Saas spend to be a Number",function()
+       {
+          const data = res.getBody();
+          expect(data.totalSaasSpend).to.be.a('number');
+  });
+  
+  
+}

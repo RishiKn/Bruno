@@ -1,0 +1,49 @@
+meta {
+  name: Verify Spend data based on dates
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/dashboard-V2/actual-spend?startDate=2021-10-18T18:30:00.000Z
+  body: json
+  auth: none
+}
+
+params:query {
+  startDate: 2021-10-18T18:30:00.000Z
+  endDate: 2022-10-18T18:30:00.000Z
+}
+
+headers {
+  cookie: {{cookieHeaderSuperAdmin}}
+  session-organization-id: 62f229afd58219e87e6dd67c
+  session-timezone
+  : Europe/London
+}
+
+vars:post-response {
+  Integrationdone: res.body.isIntegratedWithFinanceTools
+}
+
+assert {
+  res.body.isIntegratedWithFinanceTools: eq true
+  res.status: eq 200
+  res.body.totalSaasSpend: isNumber
+}
+
+tests {
+  test("Total Saas spend to be exist",function()
+       {
+          const data = res.getBody();
+          expect(data.totalSaasSpend).to.exist;
+  });
+  
+  test("Total Saas spend to be a Number",function()
+       {
+          const data = res.getBody();
+          expect(data.totalSaasSpend).to.be.a('number');
+  });
+  
+  
+}

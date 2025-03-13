@@ -1,0 +1,19 @@
+meta {
+  name: AuthenticationTokenGet
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://auth-test.spendflo.com/frontegg/identity/resources/users/v2/me
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "email": "rishi@spendflo.com",
+    "password": "Saptharishi@1997",
+    "invitationToken": ""
+  }
+}

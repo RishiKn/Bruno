@@ -1,0 +1,41 @@
+meta {
+  name: Verify Contract Spend data access for Admin
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/dashboard-V2/contracted-spend
+  body: json
+  auth: none
+}
+
+headers {
+  cookie: {{cookieHeaderAdmin}}
+}
+
+vars:post-response {
+  Integrationdone: res.body.isIntegratedWithFinanceTools
+}
+
+assert {
+  res.body.isIntegratedWithFinanceTools: eq true
+  res.status: eq 200
+  res.body.totalSaasSpend: isNumber
+}
+
+tests {
+  test("Total Saas spend to be exist",function()
+       {
+          const data = res.getBody();
+          expect(data.totalSaasSpend).to.exist;
+  });
+  
+  test("Total Saas spend to be a Number",function()
+       {
+          const data = res.getBody();
+          expect(data.totalSaasSpend).to.be.a('number');
+  });
+  
+  
+}
