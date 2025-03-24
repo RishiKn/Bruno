@@ -1,0 +1,24 @@
+meta {
+  name: Verify Cross-Org Top Agreements for Admin
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/dashboard-V2/top-contracts?filterBy=BY_CONTRACT_VALUE
+  body: json
+  auth: none
+}
+
+params:query {
+  filterBy: BY_CONTRACT_VALUE
+}
+
+headers {
+  cookie: {{cookieHeaderAdmin}}
+  session-organization-id: 671f26bd62ce7745252b0fed
+}
+
+assert {
+  : isEmpty
+}

@@ -1,23 +1,24 @@
 meta {
-  name: Verify Cross-Org Contract Spend Data for Admin
+  name: Verify Cross-Org Savings Data for Admin
   type: http
   seq: 4
 }
 
 get {
-  url: {{baseUrl}}/dashboard-V2/contracted-spend?startDate=2023-10-18T18:30:00.000Z&endDate=2025-10-18T18:30:00.000Z
+  url: {{baseUrl}}/dashboard-V2/savings?startDate=2022-08-30T18:30:00.000Z&endDate=2027-04-30T18:30:00.000Z
   body: json
   auth: none
 }
 
 params:query {
-  startDate: 2023-10-18T18:30:00.000Z
-  endDate: 2025-10-18T18:30:00.000Z
+  startDate: 2022-08-30T18:30:00.000Z
+  endDate: 2027-04-30T18:30:00.000Z
 }
 
 headers {
   cookie: {{cookieHeaderAdmin}}
   session-organization-id: 671f26bd62ce7745252b0fed
+  : 
 }
 
 vars:post-response {

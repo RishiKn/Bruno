@@ -1,0 +1,40 @@
+meta {
+  name: Verify Top Agreements for Org for Requester
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/dashboard-V2/top-contracts?filterBy=BY_CONTRACT_VALUE
+  body: json
+  auth: none
+}
+
+params:query {
+  filterBy: BY_CONTRACT_VALUE
+}
+
+headers {
+  cookie: {{cookieHeaderRequester}}
+  session-organization-id: 62f229afd58219e87e6dd67c
+  session-timezone: Asia/Kolkata
+}
+
+vars:post-response {
+  Integrationdone: res.body.isIntegratedWithFinanceTools
+}
+
+assert {
+  res.body.message: eq Unauthorized
+  res.status: eq 401
+}
+
+tests {
+  test("User restricted to view", function() {
+      const data = Response.getBody();
+  
+      expect(Response.status).toBe(401); // Check for Unauthorized status
+      expect(data).toHaveProperty("message", "Unauthorized"); // Ensure the message is correct
+  });
+  
+}

@@ -5,9 +5,16 @@ meta {
 }
 
 get {
-  url: {{baseUrl}}/dashboard-V2/contracted-spend
+  url: {{baseUrl}}/dashboard-V2/contracted-spend?startDate=2023-10-18T18:30:00.000Z&endDate=2025-10-18T18:30:00.000Z
   body: json
   auth: none
+}
+
+params:query {
+  startDate: 2023-10-18T18:30:00.000Z
+  endDate: 2025-10-18T18:30:00.000Z
+  ~startDate: 2023-10-18T18:30:00.000Z
+  ~endDate: 2025-10-18T18:30:00.000Z
 }
 
 headers {

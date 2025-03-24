@@ -1,22 +1,24 @@
 meta {
-  name: Verify Contract Spend data access for Admin
+  name: Verify Savings data based on dates
   type: http
-  seq: 2
+  seq: 6
 }
 
 get {
-  url: {{baseUrl}}/dashboard-V2/contracted-spend?startDate=2023-10-18T18:30:00.000Z&endDate=2025-10-18T18:30:00.000Z
+  url: {{baseUrl}}/dashboard-V2/?startDate=2022-08-30T18:30:00.000Z&endDate=2027-04-30T18:30:00.000Z
   body: json
   auth: none
 }
 
 params:query {
-  startDate: 2023-10-18T18:30:00.000Z
-  endDate: 2025-10-18T18:30:00.000Z
+  startDate: 2022-08-30T18:30:00.000Z
+  endDate: 2027-04-30T18:30:00.000Z
 }
 
 headers {
-  cookie: {{cookieHeaderAdmin}}
+  cookie: {{cookieHeaderSuperAdmin}}
+  session-organization-id: 62f229afd58219e87e6dd67c
+  : 
 }
 
 vars:post-response {

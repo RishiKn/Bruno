@@ -1,11 +1,11 @@
 meta {
-  name: Verify Contract Spend data access for Admin
+  name: Verify Savings data access for Admin
   type: http
   seq: 2
 }
 
 get {
-  url: {{baseUrl}}/dashboard-V2/contracted-spend?startDate=2023-10-18T18:30:00.000Z&endDate=2025-10-18T18:30:00.000Z
+  url: {{baseUrl}}/dashboard-V2/savings?startDate=2023-10-18T18:30:00.000Z&endDate=2025-10-18T18:30:00.000Z
   body: json
   auth: none
 }
@@ -16,6 +16,7 @@ params:query {
 }
 
 headers {
+  session-organization-id: 62f229afd58219e87e6dd67c
   cookie: {{cookieHeaderAdmin}}
 }
 
