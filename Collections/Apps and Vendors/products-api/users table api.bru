@@ -1,0 +1,23 @@
+meta {
+  name: users table api
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/usages/products/{{appId}}/users/table?paging=%7B%22lastItemId%22%3Anull%2C%22lastSortId%22%3Anull%7D
+  body: none
+  auth: inherit
+}
+
+params:query {
+  paging: {"lastItemId":null,"lastSortId":null}
+}
+
+headers {
+  cookie: {{cookieHeaderSuperAdmin}}
+}
+
+assert {
+  res.status: eq 200
+}

@@ -1,0 +1,19 @@
+meta {
+  name: sentiment survey graph api
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/usages/products/{{appId}}/surveys/graph
+  body: none
+  auth: inherit
+}
+
+headers {
+  cookie: {{cookieHeaderSuperAdmin}}
+}
+
+assert {
+  res.status: eq 200
+}

@@ -1,0 +1,19 @@
+meta {
+  name: Vendor-details
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/vendors/{{vendorId}}
+  body: none
+  auth: inherit
+}
+
+headers {
+  cookie: {{cookieHeaderSuperAdmin}}
+}
+
+assert {
+  res.status: eq 200
+}

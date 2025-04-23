@@ -1,0 +1,24 @@
+meta {
+  name: similar apps listing api
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/usages/products/{{appId}}/similar/list?paging=%7B%22lastItemId%22%3Anull%7D
+  body: none
+  auth: inherit
+}
+
+params:query {
+  paging: {"lastItemId":null}
+}
+
+headers {
+  cookie: {{cookieHeaderSuperAdmin}}
+}
+
+assert {
+  res.status: eq 200
+  res.response.data: isNotEmpty
+}

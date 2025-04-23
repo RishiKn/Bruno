@@ -1,0 +1,24 @@
+meta {
+  name: Vendor-Agreement-count
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/v2/contracts/count?filters=%7B%22vendorId%22%3A%7B%22include%22%3A%221%22%2C%22values%22%3A%5B%2266f2ae7726582203e7dc7944%22%5D%7D%7D
+  body: none
+  auth: inherit
+}
+
+params:query {
+  filters: {"vendorId":{"include":"1","values":["66f2ae7726582203e7dc7944"]}}
+}
+
+headers {
+  cookie: {{cookieHeaderSuperAdmin}}
+  session-organization-id: 62f229afd58219e87e6dd67c
+}
+
+assert {
+  res.status: eq 200
+}
