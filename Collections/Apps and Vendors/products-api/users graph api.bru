@@ -1,0 +1,25 @@
+meta {
+  name: users graph api
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/usages/products/{{appId}}/users/graph?start=2024-08-01&end=2025-01-27&unit=month
+  body: none
+  auth: inherit
+}
+
+params:query {
+  start: 2024-08-01
+  end: 2025-01-27
+  unit: month
+}
+
+headers {
+  cookie: {{cookieHeaderSuperAdmin}}
+}
+
+assert {
+  res.status: eq 200
+}

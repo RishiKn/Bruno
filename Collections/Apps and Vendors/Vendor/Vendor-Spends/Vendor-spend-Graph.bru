@@ -1,0 +1,26 @@
+meta {
+  name: Vendor-spend-Graph
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/vendors/{{vendorId}}/spend/graph?start=2024-04-20&end=2025-04-21&unit=month&spendTypes=%5B%22Actual%22%5D
+  body: none
+  auth: inherit
+}
+
+params:query {
+  start: 2024-04-20
+  end: 2025-04-21
+  unit: month
+  spendTypes: ["Actual"]
+}
+
+headers {
+  cookie: {{cookieHeaderSuperAdmin}}
+}
+
+assert {
+  res.status: eq 200
+}

@@ -1,0 +1,22 @@
+meta {
+  name: product-detail
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/usages/products/{{appId}}
+  body: none
+  auth: inherit
+}
+
+headers {
+  cookie: {{cookieHeaderSuperAdmin}}
+}
+
+assert {
+  res.status: eq 200
+  res.body.productName: isString
+  res.body.activeUser: gt 10
+  res.body.appSources: eq 5
+}

@@ -1,0 +1,29 @@
+meta {
+  name: product-pagelist
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/usages/products?paging=%7B%22limit%22%3A50%2C%22lastItemId%22%3Anull%2C%22firstItemId%22%3Anull%2C%22lastSortId%22%3Anull%2C%22firstSortId%22%3Anull%2C%22direction%22%3A1%7D&sort=%7B%22key%22%3A%22userEngagement%22%2C%22order%22%3A%22desc%22%7D&filters=%7B%22status%22%3A%7B%22include%22%3Afalse%2C%22values%22%3A%5B%22CLOSED%22%5D%7D%7D
+  body: none
+  auth: inherit
+}
+
+params:query {
+  paging: {"limit":50,"lastItemId":null,"firstItemId":null,"lastSortId":null,"firstSortId":null,"direction":1}
+  sort: {"key":"userEngagement","order":"desc"}
+  filters: {"status":{"include":false,"values":["CLOSED"]}}
+}
+
+headers {
+  cookie: {{cookieHeaderSuperAdmin}}
+  session-organization-id: 62f229afd58219e87e6dd67c
+}
+
+assert {
+  res.status: eq 200
+  res.body.productName: isString
+  res.body.activeUser: gt 10
+  res.body.appSources: eq 5
+}

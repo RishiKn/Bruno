@@ -1,0 +1,20 @@
+meta {
+  name: teams graph api
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/usages/products/{{appId}}/teams/graph
+  body: none
+  auth: inherit
+}
+
+headers {
+  cookie: {{cookieHeaderSuperAdmin}}
+}
+
+assert {
+  res.status: eq 200
+  res.body.columns: isString
+}

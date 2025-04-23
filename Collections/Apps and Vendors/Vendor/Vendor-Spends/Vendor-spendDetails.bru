@@ -1,0 +1,23 @@
+meta {
+  name: Vendor-spendDetails
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/vendors/{{vendorId}}/transactions?paging=%7B%22limit%22%3A50%2C%22direction%22%3A1%7D
+  body: none
+  auth: inherit
+}
+
+params:query {
+  paging: {"limit":50,"direction":1}
+}
+
+headers {
+  cookie: {{cookieHeaderSuperAdmin}}
+}
+
+assert {
+  res.status: eq 200
+}
